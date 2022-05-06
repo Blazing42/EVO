@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5df9a5774bce6a54383a1f558fbf282b, type: 3}
-  m_Name: DragonLeg
+  m_Name: CatEar
   m_EditorClassIdentifier: 
-  type: 4
-  bpName: Dragon Leg
-  bpDescription: A scaly dragon leg for jumping
-  evoPointCost: 10
+  type: 7
+  bpName: Cat Ear
+  bpDescription: Neko Neko
+  evoPointCost: 4
   unlocked: 1
-  lockedIcon: {fileID: 21300000, guid: 2137f3d567943a5418308f4318cb762b, type: 3}
-  unlockedIcon: {fileID: 21300000, guid: 2137f3d567943a5418308f4318cb762b, type: 3}
-  bodyPartPrefab: {fileID: 650774622617911687, guid: e0ca72f50e8fdef4ab548e4345a6b768,
+  lockedIcon: {fileID: 21300000, guid: 621828070f20d4c4dafb0dd2197cf05a, type: 3}
+  unlockedIcon: {fileID: 21300000, guid: 621828070f20d4c4dafb0dd2197cf05a, type: 3}
+  bodyPartPrefab: {fileID: 4530161606422335362, guid: 4cf146b538f576541b25692816bbb9ae,
     type: 3}

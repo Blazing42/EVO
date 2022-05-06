@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Scriptable object that stores the data for each body part
+/// </summary>
 [CreateAssetMenu(fileName = "New Body Part", menuName = "Body Part")]
 public class BodyPartData : ScriptableObject
 {
-    public enum bpType { Body, Head, Neck_Tail, Leg , Arm_Hands, Feet, Eyes, Nose, Teeth, Wings, Decoration};
+    public enum bpType { All, Head, Neck, Tail, Leg , Arm, Eyes, Decoration};
     public bpType type;
 
     public string bpName;
@@ -19,11 +22,13 @@ public class BodyPartData : ScriptableObject
 
     public GameObject bodyPartPrefab;
 
+    //method to unlock the body part
     public void UnlockBodyPart()
     {
         unlocked = true;
     }
 
+    //method used for debugging
     public void DebugPrint()
     {
         Debug.Log("This " + bpName + " costs " + evoPointCost + " and is " + bpDescription);

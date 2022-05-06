@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5df9a5774bce6a54383a1f558fbf282b, type: 3}
-  m_Name: DragonLeg
+  m_Name: DragonHead
   m_EditorClassIdentifier: 
-  type: 4
-  bpName: Dragon Leg
-  bpDescription: A scaly dragon leg for jumping
-  evoPointCost: 10
+  type: 1
+  bpName: Dragon Head
+  bpDescription: If only it could breath fire
+  evoPointCost: 20
   unlocked: 1
-  lockedIcon: {fileID: 21300000, guid: 2137f3d567943a5418308f4318cb762b, type: 3}
-  unlockedIcon: {fileID: 21300000, guid: 2137f3d567943a5418308f4318cb762b, type: 3}
-  bodyPartPrefab: {fileID: 650774622617911687, guid: e0ca72f50e8fdef4ab548e4345a6b768,
+  lockedIcon: {fileID: 21300000, guid: c87a2652e39dd5e48aade0428adff99f, type: 3}
+  unlockedIcon: {fileID: 21300000, guid: c87a2652e39dd5e48aade0428adff99f, type: 3}
+  bodyPartPrefab: {fileID: 8049514711799134079, guid: 5339a5e83b4cbd04c9d30d26bfc2b564,
     type: 3}
