@@ -9,11 +9,14 @@ public class CreatureCreatorBodyPartDragState : CreatureCreatorBaseState
 {
     Transform grabbedObject;
     Transform grabbedMirroredObject;
+    float distanceFromCamera;
 
     //Method that is called when this state is entered
     public override void EnterState(CreatureCreatorStateManager stateManager)
     {
         SetUpObjectEditing(stateManager.GrabbedObj, stateManager.MirroredObj);
+        //makes sure the dragged object is always a suitable distance from the camera depending on how zoomed in the player is
+        distanceFromCamera = Vector3.Distance(Camera.main.transform.position, Vector3.zero)/3;
     }
     
     //Method that controls what happens each time the update is called in this state
@@ -33,10 +36,8 @@ public class CreatureCreatorBodyPartDragState : CreatureCreatorBaseState
                 else
                 {
                     //if not set the object so that it is positioned in worldspace where the mouse is
-                    Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(grabbedObject.transform.position).z);
-                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-                    grabbedObject.transform.position = worldPosition;
-                   
+                    grabbedObject.transform.position = GrabbedObjPos();
+
                 }
 
                 //update the mirrored objects position and rotation so it is next to the grabbed object but mirrored
@@ -74,6 +75,14 @@ public class CreatureCreatorBodyPartDragState : CreatureCreatorBaseState
 
         Physics.Raycast(ray, out rayHit);
         return rayHit;
+    }
+
+    //method that calculates where in space the grabbed object will be when not over the character
+    Vector3 GrabbedObjPos()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Vector3 pos = ray.origin + (ray.direction * distanceFromCamera);
+        return pos;
     }
 
     //Method to set up the references to the grabbed object and its mirror
